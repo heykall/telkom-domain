@@ -9,15 +9,15 @@ use yew_router::components::RouterAnchor;
 use crate::pages::{
     home::Home,
     details::Details,
+		dashboard_home::DashboardHome,
 };
-
 
 #[derive(Switch, Clone)]
 enum Route {
     #[to = "/details"]
     Details,
     #[to = "/"]
-    Home,
+    DashboardHome,
 }
 
 pub struct App {}
@@ -48,8 +48,9 @@ impl Component for App {
         type Anchor = RouterAnchor<Route>;
         html! {
             <div>
-                <p>{ "Hello world!" }</p>
-                // <Anchor route=Route::Home classes="item">
+							<DashboardHome/>
+                // <p>{ "Hello world!" }</p>
+                // <Anchor route=Route::DashboardHome classes="item">
                 //   {"Home"}
                 // </Anchor>
                 // <Anchor route=Route::Details classes="item">
@@ -58,6 +59,7 @@ impl Component for App {
                 // <main>
                 //     <Router<Route, ()> render=render/>
                 // </main>
+
             </div>
         }
     }
